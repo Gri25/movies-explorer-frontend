@@ -1,0 +1,146 @@
+.about-me {
+  background-color: #202020;
+  margin: 0;
+  padding: 110px 70px 125px;
+}
+
+.about-me__header {
+  margin: 0;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #DADADA;
+}
+
+.about-me__header-text {
+  margin: 0;
+  color: #FFFFFF;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+}
+
+.about-me__main {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 66px 0 100px;
+}
+
+.about-me__main-left {
+  width: 600px;
+}
+
+.about-me__main-left-name {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+}
+
+.about-me__main-left-profession {
+  margin: 18px 0 26px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+
+.about-me__main-left-about {
+  margin: 0 0 99px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.about-me__main-left-link {
+  margin: 0 20px 0 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity .1s linear;
+}
+
+.about-me__main-left-link:hover {
+  opacity: 0.5;
+}
+
+.about-me__main-left-link:focus {
+  opacity: 0.2;
+}
+
+.about-me__main-right {
+  width: 270px;
+  height: 327px;
+  border-radius: 10px;
+}
+
+.about-me__portfolio-header {
+  margin: 0 0 50px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  color: #8B8B8B;
+}
+
+.about-me__portfolio-block {
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;;
+}
+
+.about-me__portfolio-block-text {
+  margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+}
+
+.about-me__portfolio-block-link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 60px;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: -0.04em;
+  transition: opacity .1s linear;
+}
+
+.about-me__portfolio-block-link:hover {
+  opacity: 0.5;
+}
+
+.about-me__portfolio-block-link:focus {
+  opacity: 0.2;
+}
+
+.about-me__portfolio-block:last-of-type {
+  margin: 0;
+  border: none;
+}
+

@@ -1,6 +1,4 @@
 import React from "react";
-// import logo from "../images/Vector.svg";
-//import { Link, useLocation } from "react-router-dom";
 
 function AboutProject() {
   return (
