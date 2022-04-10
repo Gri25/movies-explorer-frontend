@@ -1,0 +1,58 @@
+.filter-checkbox {
+  margin: 0;
+  padding: 20px 70px 10px;
+  background-color: #202020;
+}
+
+.filter-checkbox__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 69px;
+}
+
+.filter-checkbox__text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.filter-checkbox__button {
+  margin: 0 12px 0 0;
+  display: inline-block;
+  cursor: pointer;
+  width: 36px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #EBEBEB;
+  z-index: 0;
+  position: relative;
+  transition-duration: 300ms;
+}
+
+.filter-checkbox__button::after {
+  content: "";
+  height: 16px; /* высота кнопки */
+  width: 16px; /* ширина кнопки */
+  border-radius: 18px; /* радиус кнопки */
+  background: #fff; /* цвет кнопки */
+  top: 2px; /* положение кнопки по вертикали относительно основы */
+  left: 2px; /* положение кнопки по горизонтали относительно основы */
+  transition-duration: 300ms; /* анимация */
+  position: absolute;
+  z-index: 1;
+}
+
+.filter-checkbox__button-on {
+  background: #3DDC84;
+}
+.filter-checkbox__button-on::after { /* кругляшок */
+  left: 18px;
+  background: #FFFFFF;;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);  /* тень */
+}

@@ -1,0 +1,10 @@
+.movie-cards {
+  margin: 0;
+  padding: 80px 70px 10px;
+  background-color: #202020;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 24px;
+  row-gap: 37px;
+  justify-items: center;
+}
