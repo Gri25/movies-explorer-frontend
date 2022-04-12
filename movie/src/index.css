@@ -14,3 +14,14 @@
 @import url(../src/components/Movies/MoviesCardList/MoviesCardList.css);
 @import url(../src/components/Movies/MoviesCard/MoviesCard.css);
 @import url(../src/components/Movies/Preloader/Preloader.css);
+
+@import url(../src/components/SavedMovies/SavedMoviesCardList/SavedMoviesCardList.css);
+@import url(../src/components/SavedMovies/SavedMoviesCard/SavedMoviesCard.css);
+
+@import url(../src/components/Profile/Profile.css);
+
+@import url(../src/components/Register/Register.css);
+
+@import url(../src/components/Login/Login.css);
+
+@import url(../src/components/PageNotFound/PageNotFound.css);

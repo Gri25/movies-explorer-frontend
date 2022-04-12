@@ -29,6 +29,7 @@
   color: #FFFFFF;
   text-decoration: none;
   transition: opacity .2s linear;
+  color: #FFFFFF;
 }
 
 .header__header-link:hover {
@@ -42,6 +43,12 @@
 
 .header__header-link:last-of-type {
   margin: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
 }
 
 .header__right-info {
