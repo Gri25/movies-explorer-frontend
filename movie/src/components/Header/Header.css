@@ -84,3 +84,27 @@
   height: 14px;
   background-color: #313131
 }
+
+.header__burger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .header__header-link {
+    display: none;
+  }
+
+  .header__right-info {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+}

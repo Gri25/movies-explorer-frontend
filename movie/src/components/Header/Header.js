@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/logo.svg";
 import logoMain from "../../images/icon-main.svg";
+import burger from "../../images/header-burger.svg"
 
 function Header() {
   return (
@@ -14,6 +15,7 @@ function Header() {
           Сохранённые фильмы
         </a>
       </div>
+      <img src={burger} className="header__burger" alt="Меню" />
       <div className="header__right-info">
         <p className="header__account-text">Аккаунт</p>
         <div className="header__window-logo">

@@ -59,3 +59,12 @@
 .footer__main-right-link:focus {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 768px) {
+
+  .footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}

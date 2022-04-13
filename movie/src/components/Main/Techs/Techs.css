@@ -77,3 +77,25 @@
   width: 90px;
   height: 60px;
 }
+
+@media screen and (max-width: 768px) {
+  .techs {
+    padding: 90px 50px;
+  }
+  .techs__main {
+    padding: 80px 0 83px;
+  }
+  .techs__main-text {
+    font-size: 12px;
+    line-height: 18px;
+    width: 460px;
+  }
+  .techs__footer-text {
+    margin: 0 5px;
+    font-size: 12px;
+    line-height: 15px;
+    width: 84px;
+    height: 57px;
+  }
+}
+

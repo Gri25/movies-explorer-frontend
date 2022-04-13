@@ -17,9 +17,8 @@ function Register() {
       <div className="register__input-section">
         <p className="register__input-text">Пароль</p>
         <input
-          className="register__input-info"
+          className="register__input-red"
           type="password"
-          name="password"
         />
       </div>
       <span className="register__input-error">Что-то пошло не так...</span>

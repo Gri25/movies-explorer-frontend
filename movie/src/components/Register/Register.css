@@ -58,15 +58,28 @@
   font-size: 14px;
   line-height: 17px;
   height: 17px;
-  color: #FFFFFF;
+  color: #FFF;
   text-decoration: none;
   border: none;
   text-align:left;
   outline: none;
 }
 
-.register__input-info:last-of-type {
+.register__input-red {
+  background-color: #202020;
+  padding: 0;
+  margin: 5px 0 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  height: 17px;
   color: #EE3465;
+  text-decoration: none;
+  border: none;
+  text-align:left;
+  outline: none;
 }
 
 .register__button-edit {

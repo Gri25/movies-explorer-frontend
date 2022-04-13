@@ -50,3 +50,11 @@
 .search-form__button:focus {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 768px) {
+
+  .search-form {
+    padding: 80px 30px 21px;
+  }
+
+}

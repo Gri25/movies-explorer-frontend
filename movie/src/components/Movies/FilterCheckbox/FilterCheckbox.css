@@ -1,6 +1,6 @@
 .filter-checkbox {
   margin: 0;
-  padding: 20px 70px 10px;
+  padding: 20px 70px 11px;
   background-color: #202020;
 }
 
@@ -55,4 +55,16 @@
   left: 18px;
   background: #FFFFFF;;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);  /* тень */
+}
+
+@media screen and (max-width: 768px) {
+
+  .filter-checkbox {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .filter-checkbox__info {
+    padding-bottom: 50px;
+  }
 }
