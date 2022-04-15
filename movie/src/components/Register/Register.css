@@ -32,9 +32,14 @@
   flex-direction: column;
 }
 
-.register__input-section:last-of-type {
+.register__input-section-red {
+  width: 396px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 10px;
+  border-bottom: 1px solid #424242;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .register__input-text {
@@ -145,6 +150,12 @@
   color: #FFFFFF;
   border: none;
   margin: 134px auto 0;
+  padding: 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .register__information {
@@ -175,4 +186,102 @@
   line-height: 17px;
   height: 17px;
   text-decoration: none;
+}
+
+@media screen and (max-width: 1150px) {
+
+  .register__logo {
+    margin-left: 360px;
+  }
+
+  .register__text {
+    margin-left: 360px;
+  }
+
+  .register__input-error {
+    margin-left: 360px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .register {
+    padding: 232px 0;
+  }
+
+  .register__logo {
+    margin-left: 186px;
+  }
+
+  .register__text {
+    margin-left: 186px;
+  }
+
+  .register__input-error {
+    margin-left: 186px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .register {
+    padding: 56px 0 30px;
+  }
+
+  .register__logo {
+    margin-left: 86px;
+  }
+
+  .register__text {
+    margin-left: 86px;
+  }
+
+  .register__input-error {
+    margin-left: 86px;
+  }
+
+  .register__input-section {
+    width: 260px;
+  }
+
+  .register__input-section-red {
+    width: 260px;
+  }
+
+  .register__button-reg {
+    width: 260px;
+    height: 45px;
+    margin-top: 122px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .register__logo {
+    margin: 0;
+    align-self: center;
+  }
+
+  .register__text {
+    margin: 50px 0 80px;
+    align-self: center;
+  }
+
+  .register__input-error {
+    margin-left: 30px;
+  }
+
+  .register__question {
+    margin: 14px 7px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .register__button-log {
+    margin: 14px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
 }

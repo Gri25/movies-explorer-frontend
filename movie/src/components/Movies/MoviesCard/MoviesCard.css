@@ -83,3 +83,68 @@
 .movie-card__stroke:focus {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 850px) {
+
+  .movie-card {
+    max-width: 339px;
+    max-height: 262px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .movie-card__stroke {
+    margin-top: 18px;
+    margin-right: 22px;
+  }
+
+  .movie-card__text {
+    margin-top: 14px;
+  }
+
+  .movie-card__duration {
+    margin-top: 15px;
+  }
+
+  .movie-card__info {
+    margin-left: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
+  .movie-card {
+    max-width: 300px;
+    max-height: 237px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .movie-card__stroke {
+    margin-top: 17px;
+    margin-right: 18px;
+  }
+
+  .movie-card__duration {
+    margin-top: 14px;
+  }
+
+  .movie-card__info {
+    margin-left: 14px;
+  }
+
+  .movie-card__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .movie-card__duration {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+}

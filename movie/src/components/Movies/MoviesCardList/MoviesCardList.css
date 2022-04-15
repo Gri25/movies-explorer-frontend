@@ -8,3 +8,22 @@
   row-gap: 37px;
   justify-items: center;
 }
+
+@media screen and (max-width: 768px) {
+
+  .movie-cards {
+    padding: 70px 30px 30px;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .movie-cards {
+    padding: 40px 10px 26px;
+    row-gap: 14px;
+  }
+
+}

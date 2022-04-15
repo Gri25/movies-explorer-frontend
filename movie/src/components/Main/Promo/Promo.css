@@ -92,8 +92,6 @@
 
   .promo__image {
     right: -50px;
-    width: 680px;
-    height: 230px;
   }
 }
 
@@ -107,9 +105,54 @@
     text-align: center;
     width: 680px;
     margin: 300px auto 140px;
+    padding: 0 10px;
   }
 
   .promo__image {
     right: -12px;
   }
+}
+
+@media screen and (max-width: 635px) {
+
+  .promo__main {
+    text-align: center;
+    font-size: 31px;
+    line-height: 39px;
+    margin: 183px 0 60px;
+    width: 295px;
+    padding: 0 10px 0 10px;
+    letter-spacing: -0.04em;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .promo {
+    padding: 18px 0 40px 0;
+  }
+
+  .promo__image {
+    right: 56.5%;
+  }
+
+  .promo__header-link {
+    font-size: 10px;
+    width: 54px;
+    height: 26px;
+  }
+
+  .promo__header-link:last-of-type {
+    margin-left: 14px;
+  }
+
+  .promo__header-logo {
+    padding-left: 14px;
+  }
+
+  .promo__header-links {
+    padding-right: 14px;
+  }
+
 }

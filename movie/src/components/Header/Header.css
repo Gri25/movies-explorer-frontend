@@ -108,3 +108,16 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 320px) {
+
+  .header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header__burger {
+    height: 43px;
+    width: 44px;
+  }
+}

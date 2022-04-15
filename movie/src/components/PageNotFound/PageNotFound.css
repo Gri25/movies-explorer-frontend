@@ -42,3 +42,37 @@
   text-decoration: none;
   text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+
+  .not-found {
+    padding: 408px 0 222px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .not-found {
+    padding: 329px 0 30px;
+  }
+
+  .not-found__text {
+    height: 97px;
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .not-found__info {
+    margin: 10px 0 0;
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .not-found__button {
+    margin: 284px 0 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+}

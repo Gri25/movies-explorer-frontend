@@ -18,7 +18,7 @@ function Login() {
           name="password"
         />
       </div>
-      <button className="login__button-reg">Зарегистрироваться</button>
+      <button className="login__button-reg">Войти</button>
       <div className="login__information">
         <p className="login__question">Ещё не зарегистрированы?</p>
         <a href="WWW" className="login__button-log" target="blank">

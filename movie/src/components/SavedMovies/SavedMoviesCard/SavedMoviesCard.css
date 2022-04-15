@@ -85,3 +85,66 @@
 .saved-movie__stroke:focus {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 850px) {
+
+  .saved-movie {
+    max-width: 339px;
+    max-height: 262px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .saved-movie__info {
+    margin-left: 14px;
+  }
+
+  .saved-movie__text {
+    margin-top: 14px;
+  }
+
+  .saved-movie__duration {
+    margin-top: 15px;
+  }
+
+  .saved-movie__stroke {
+    margin-top: 19px;
+    margin-right: 25px;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+
+  .saved-movie {
+    max-width: 300px;
+    max-height: 237px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .saved-movie__stroke {
+    margin-top: 18.5px;
+    margin-right: 21.5px;
+  }
+
+  .saved-movie__text {
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .saved-movie__duration {
+    margin-top: 14px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .saved-movie__info {
+    margin-left: 14px;
+  }
+}

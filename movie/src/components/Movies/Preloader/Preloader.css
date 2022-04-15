@@ -31,3 +31,12 @@
 .preloader__button:focus {
   opacity: 0.2;
 }
+
+@media screen and (max-width: 320px) {
+
+  .preloader__button {
+    width: 240px;
+    padding: 0;
+  }
+
+}

@@ -58,3 +58,16 @@
   }
 
 }
+
+@media screen and (max-width: 320px) {
+
+  .search-form {
+    padding: 80px 14px 22px;
+  }
+
+  .search-form__input {
+    font-size: 11px;
+    line-height: 17px;
+  }
+
+}

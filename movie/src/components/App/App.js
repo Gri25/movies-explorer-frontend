@@ -1,6 +1,7 @@
 // import './App.css';
 //в апп никакой верстки просто импорты и функционал
 import React, { useEffect, useState } from "react";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Login from "../Login/Login";
@@ -63,6 +64,7 @@ function App() {
       <Register/>
       <Login/>
       <PageNotFound/>
+      <BurgerMenu/>
     </>
   );
 }

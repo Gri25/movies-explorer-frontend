@@ -14,7 +14,7 @@ function Register() {
         <p className="register__input-text">E-mail</p>
         <input className="register__input-info" />
       </div>
-      <div className="register__input-section">
+      <div className="register__input-section-red">
         <p className="register__input-text">Пароль</p>
         <input
           className="register__input-red"
