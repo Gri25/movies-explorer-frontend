@@ -1,7 +1,10 @@
 import React from "react";
+import Header from "../Header/Header";
 
 function Profile() {
   return (
+    <>
+    <Header/>
     <section className="profile">
       <h2 className="profile__text">Привет, Виталий!</h2>
       <div className="profile__input-section">
@@ -19,6 +22,7 @@ function Profile() {
         Выйти из аккаунта
       </a>
     </section>
+    </>
   );
 }
 
