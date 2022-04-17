@@ -3,14 +3,23 @@ import logo from "../../../images/logo.svg";
 import image from "../../../images/text__COLOR_landing-logo.png";
 import { Link } from "react-router-dom";
 
-function Promo(props) {
+function Promo() {
   return (
     <section className="promo">
       <div className="promo__header">
-        <img src={logo} className="promo__header-logo" alt="Лого" />
+        <Link to="/" className="promo__header-logo-container">
+          <img src={logo} className="promo__header-logo" alt="Лого" />
+        </Link>
         <div className="promo__header-links">
-          <a href="WWW" className="promo__header-link">Регистрация</a>
-          <a href="WWW" className="promo__header-link promo__header-link_type-active">Войти</a>
+          <Link to="/signup" className="promo__header-link">
+            Регистрация
+          </Link>
+          <Link
+            to="/signin"
+            className="promo__header-link promo__header-link_type-active"
+          >
+            Войти{" "}
+          </Link>
         </div>
       </div>
       <h1 className="promo__main">

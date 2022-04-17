@@ -4,6 +4,13 @@
   margin: 0;
 }
 
+.promo__header-logo-container {
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+}
+
 .promo__header-logo {
   margin: 0 0 18px;
 }
@@ -139,16 +146,23 @@
 
   .promo__header-link {
     font-size: 10px;
-    width: 54px;
+    width: 64px;
     height: 26px;
   }
 
   .promo__header-link:last-of-type {
     margin-left: 14px;
+    width: 54px;
+    height: 26px;
+  }
+
+  .promo__header-logo-container {
+    padding-left: 14px;
   }
 
   .promo__header-logo {
-    padding-left: 14px;
+    margin: 0;
+    padding: 0;
   }
 
   .promo__header-links {
