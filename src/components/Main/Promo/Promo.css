@@ -111,16 +111,18 @@
   }
 
   .promo__image {
-    display: none;
+    display: block;
+    width: 500px;
+    margin: 0;
+    padding: 0;
   }
 
   .promo__image-mini {
     position: absolute;
-    display: block;
+    display: none;
     right: 0;
     bottom: 40px;
   }
-
 }
 
 @media screen and (max-width: 512px) {
@@ -131,6 +133,18 @@
 
   .promo__main {
     width: 100%;
+  }
+
+  .promo__image {
+    display: none;
+  }
+
+  .promo__image-mini {
+    position: absolute;
+    display: block;
+    width: 100%;
+    right: 0;
+    bottom: 40px;
   }
 
 }

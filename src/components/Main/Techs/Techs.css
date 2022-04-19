@@ -99,7 +99,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 
   .techs__main-text {
     width: 270px;
@@ -109,7 +109,6 @@
     padding: 0 53px 0;
     display: grid;
     margin: 0;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
     column-gap: 10px;
     row-gap: 10px;
@@ -125,6 +124,7 @@
 @media screen and (max-width: 320px) {
   .techs {
     padding: 70px 18px;
+    background-color: #202020;
   }
 
   .techs__header {

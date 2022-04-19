@@ -12,6 +12,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: outline .5s linear;
+}
+
+.search-form__form:hover {
+  outline: 1px solid #4285F4;
 }
 
 .search-form__input {
