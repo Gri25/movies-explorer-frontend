@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../../images/logo.svg";
+import imagemini from "../../../images/mini-promo.png";
 import image from "../../../images/text__COLOR_landing-logo.png";
 import { Link } from "react-router-dom";
 
@@ -26,17 +27,9 @@ function Promo() {
         Учебный проект студента факультета Веб-разработки.
       </h1>
       <img src={image} className="promo__image" alt="Картинка" />
+      <img src={imagemini} className="promo__image-mini" alt="Картинка-мини" />
     </section>
   );
 }
 
 export default Promo;
-/*
-
-        <Link to="/sign-up" className={props ? "promo__header-link" : "promo__header-link_type-active"}>
-            Регистрация
-          </Link>
-          <Link to="/sign-in" className={props ? "promo__header-link" : "promo__header-link_type-active"}>
-            Войти
-          </Link>
-          */

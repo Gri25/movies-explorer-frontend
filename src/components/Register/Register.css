@@ -19,7 +19,7 @@
 
 .register__text {
   margin: 40px 0 40px 442px;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -49,7 +49,7 @@
 
 .register__input-text {
   margin: 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -62,7 +62,7 @@
   background-color: #202020;
   padding: 0;
   margin: 5px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -79,7 +79,7 @@
   background-color: #202020;
   padding: 0;
   margin: 5px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -95,7 +95,7 @@
 .register__button-edit {
   text-align: center;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -115,7 +115,7 @@
 }
 
 .register__button-exit {
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -138,7 +138,7 @@
 
 .register__input-error {
   height: 12px;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -156,7 +156,7 @@
   border: none;
   margin: 134px auto 0;
   padding: 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -172,7 +172,7 @@
 
 .register__question {
   margin: 16px 6px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -184,7 +184,7 @@
 .register__button-log {
   margin: 16px 0 0;
   color: #4285F4;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

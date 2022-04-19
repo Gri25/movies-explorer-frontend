@@ -38,7 +38,7 @@
 .saved-movie__text {
   margin: 0;
   margin-top: 16px;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -48,7 +48,7 @@
 
 .saved-movie__duration {
   margin: 17px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 11px;

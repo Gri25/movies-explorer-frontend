@@ -50,9 +50,13 @@ function App() {
         <Route path="/signup">
           <Register />
         </Route>
+        <Route path="/error">
+          <PageNotFound />
+        </Route>
+        <Route path="/burger">
+          <BurgerMenu />
+        </Route>
       </Switch>
-      <PageNotFound />
-      <BurgerMenu />
     </>
   );
 }

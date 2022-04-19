@@ -28,7 +28,7 @@
 
 .header__header-link {
   margin: 0 16px 0 44px;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -50,7 +50,7 @@
 
 .header__header-link:last-of-type {
   margin: 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -68,7 +68,7 @@
 
 .header__account-text {
   margin: 0 17px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;

@@ -4,12 +4,19 @@
   display: flex;
   flex-direction: column;
   padding: 70px 0 70px;
+  align-items: center;
+}
+
+.login__section {
+  padding: 0;
+  margin: 0;
+  width: 396px;
 }
 
 .login__logo-container {
   width: 38px;
   height: 38px;
-  margin: 0 0 0 442px;
+  margin: 0;
 }
 
 .login__logo {
@@ -18,8 +25,8 @@
 }
 
 .login__text {
-  margin: 40px 0 40px 442px;
-  font-family: 'Inter';
+  margin: 40px 0;
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -39,12 +46,11 @@
 
 .login__input-section:last-of-type {
   margin: 0 auto;
-  padding: 0;
 }
 
 .login__input-text {
   margin: 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -57,7 +63,7 @@
   background-color: #202020;
   padding: 0;
   margin: 5px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -73,7 +79,7 @@
 .login__button-edit {
   text-align: center;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -93,7 +99,7 @@
 }
 
 .login__button-exit {
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
@@ -122,7 +128,7 @@
   color: #FFFFFF;
   border: none;
   margin: 197px auto 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -139,7 +145,7 @@
 
 .login__question {
   margin: 16px 6px 0 0;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -151,7 +157,7 @@
 .login__button-log {
   margin: 16px 0 0;
   color: #4285F4;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -160,17 +166,6 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 1150px) {
-
-  .login__logo-container {
-    margin-left: 360px;
-  }
-
-  .login__text {
-    margin-left: 360px;
-  }
-
-}
 
 @media screen and (max-width: 768px) {
 
@@ -178,28 +173,18 @@
     padding: 232px 0;
   }
 
-  .login__logo-container {
-    margin-left: 186px;
-  }
-
-  .login__text {
-    margin-left: 186px;
-  }
-
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
+
+  .login__section {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+  }
 
   .login {
     padding: 56px 0 30px;
-  }
-
-  .login__logo-container {
-    margin-left: 86px;
-  }
-
-  .login__text {
-    margin-left: 86px;
   }
 
   .login__input-section {
@@ -227,7 +212,7 @@
   }
 
   .login__button-reg {
-    margin-top: 285px;
+    margin-top: 309px;
   }
 
   .login__question {

@@ -14,7 +14,7 @@
 .techs__header-text {
   margin: 0;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 22px;
@@ -30,7 +30,7 @@
   margin: 0;
   text-align: center;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -42,7 +42,7 @@
   margin: 26px auto 0;
   text-align: center;
   color: #FFFFFF;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -65,7 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Inter';
+  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -102,7 +102,7 @@
 @media screen and (max-width: 500px) {
 
   .techs__main-text {
-    width: 280px;
+    width: 270px;
   }
 
   .techs__footer {
@@ -137,7 +137,7 @@
   .techs__header-text {
     margin: 0;
     color: #FFFFFF;
-    font-family: 'Inter';
+    font-family: "Inter", Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -156,6 +156,7 @@
   .techs__main-text {
     font-size: 11px;
     line-height: 16px;
+    width: 280px;
   }
 
 }
