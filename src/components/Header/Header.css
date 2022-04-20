@@ -1,0 +1,131 @@
+.header {
+  margin: 0;
+  padding: 18px 70px;
+  background-color: #202020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__left-info {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-container {
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+}
+
+.header__logo {
+  margin: 0;
+  width: 38px;
+  height: 38px;
+}
+
+.header__header-link {
+  margin: 0 16px 0 44px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity .2s linear;
+  color: #FFFFFF;
+}
+
+.header__header-link:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.header__header-link:focus {
+  opacity: 0.2;
+}
+
+.header__header-link:last-of-type {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.header__right-info {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.header__account-text {
+  margin: 0 17px 0 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.header__window-logo {
+  width: 26px;
+  height: 30px;
+  background-color: #313131;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__account-logo {
+  margin: 0;
+  width: 11.5px;
+  height: 14px;
+  background-color: #313131
+}
+
+.header__burger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  .header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .header__header-link {
+    display: none;
+  }
+
+  .header__right-info {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  .header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .header__burger {
+    height: 43px;
+    width: 44px;
+  }
+}

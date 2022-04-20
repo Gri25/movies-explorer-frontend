@@ -1,0 +1,146 @@
+.movie-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  max-height: 364px;
+  position: relative;
+  background-color: #222222;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+}
+
+.movie-card__image {
+  margin: 0;
+  width: 100%;
+  max-height: 203px;
+  border-radius: 10px 10px 0 0;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.movie-card__description {
+  display: flex;
+  justify-content: space-between;
+  height: 78px;
+  margin: 0;
+}
+
+.movie-card__info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 16px;
+}
+
+.movie-card__text {
+  margin: 0;
+  margin-top: 16px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.movie-card__duration {
+  margin: 17px 0 0;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  color: #8B8B8B;
+}
+
+.movie-card__stroke {
+  background: url(../../../images/icon__COLOR_stroke-2.svg);
+  margin: 19px 24px 0 0;
+  padding: 0;
+  width: 14px;
+  height: 12px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  transition: opacity .2s linear;
+}
+
+.movie-card__stroke_active {
+  background: url(../../../images/stroke-active.svg);
+  opacity: 1;
+}
+
+.movie-card__stroke:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.movie-card__stroke:focus {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 850px) {
+
+  .movie-card {
+    max-width: 339px;
+    max-height: 262px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .movie-card__stroke {
+    margin-top: 18px;
+    margin-right: 22px;
+  }
+
+  .movie-card__text {
+    margin-top: 14px;
+  }
+
+  .movie-card__duration {
+    margin-top: 15px;
+  }
+
+  .movie-card__info {
+    margin-left: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
+  .movie-card {
+    max-width: 300px;
+    max-height: 237px;
+  }
+
+  .movie-card__stroke {
+    margin-top: 17px;
+    margin-right: 18px;
+  }
+
+  .movie-card__duration {
+    margin-top: 14px;
+  }
+
+  .movie-card__info {
+    margin-left: 14px;
+  }
+
+  .movie-card__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .movie-card__duration {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+}

@@ -1,0 +1,29 @@
+.saved-movies {
+  margin: 0;
+  padding: 80px 70px 150px;
+  background-color: #202020;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 24px;
+  row-gap: 37px;
+  justify-items: center;
+}
+
+@media screen and (max-width: 768px) {
+
+  .saved-movies {
+    padding: 70px 30px 170px;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+
+  .saved-movies {
+    padding: 40px 10px 166px;
+    row-gap: 14px;
+  }
+
+}

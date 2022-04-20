@@ -1,0 +1,42 @@
+.preloader {
+  margin: 0;
+  padding: 50px 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #202020;
+}
+
+.preloader__button {
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #424242;
+  background-color: #202020;
+  height: 36px;
+  width: 320px;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.preloader__button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.preloader__button:focus {
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 320px) {
+
+  .preloader__button {
+    width: 240px;
+    padding: 0;
+  }
+
+}
