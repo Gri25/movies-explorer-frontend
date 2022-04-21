@@ -1,5 +1,3 @@
-// import './App.css';
-//в апп никакой верстки просто импорты и функционал
 import React, { useEffect, useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import Login from "../Login/Login";
@@ -10,6 +8,7 @@ import SavedMovies from "../SavedMovies/SavedMovies";
 import { Route, Switch } from "react-router-dom";
 import Movies from "../Movies/Movies";
 import Main from "../Main/Main";
+import moviesApi from "../../utils/MoviesApi"
 
 function App() {
   const [isCloseShortsFilms, setIsCloseShortsFilms] = useState(false);
@@ -20,6 +19,21 @@ function App() {
   function closeShortsFilms() {
     setIsCloseShortsFilms(false);
   }
+
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    moviesApi
+    .getCardMovies()
+      .then((data) => {
+        setCards(data);
+        console.log(data)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+    , []);
 
   return (
     <>
@@ -32,6 +46,7 @@ function App() {
             isOpen={isCloseShortsFilms}
             onEditFilms={handleEditShortsFilms}
             onClose={closeShortsFilms}
+            cards={cards}
           />
         </Route>
         <Route path="/saved-movies">

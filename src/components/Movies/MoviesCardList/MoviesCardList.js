@@ -1,10 +1,15 @@
 import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-function MoviesCardList() {
+function MoviesCardList(props) {
   return (
     <section className="movie-cards">
-      <MoviesCard/>
+      {props.cards.map(card => (
+          <MoviesCard
+            key={card._id}
+            card={card}
+          />
+        ))}
     </section>
   );
 }

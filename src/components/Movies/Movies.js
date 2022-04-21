@@ -16,7 +16,9 @@ function Movies(props) {
         onEditFilms={props.onEditFilms}
         onClose={props.onClose}
       />
-      <MoviesCardList />
+      <MoviesCardList
+        cards={props.cards}
+      />
       <Preloader />
       <Footer />
     </>
