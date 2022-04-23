@@ -6,6 +6,13 @@
   padding: 70px 0 70px;
 }
 
+.register__form-section {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .register__logo-container {
   margin: 0 0 0 442px;
   width: 38px;
