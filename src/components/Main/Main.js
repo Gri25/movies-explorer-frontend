@@ -5,7 +5,6 @@ import Promo from "./Promo/Promo";
 import Techs from "./Techs/Techs";
 
 function Main() {
-
   return (
     <>
       <Promo />

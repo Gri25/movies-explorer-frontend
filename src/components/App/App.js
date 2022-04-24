@@ -5,7 +5,7 @@ import PageNotFound from "../PageNotFound/PageNotFound";
 import Profile from "../Profile/Profile";
 import Register from "../Register/Register";
 import SavedMovies from "../SavedMovies/SavedMovies";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import Movies from "../Movies/Movies";
 import Main from "../Main/Main";
 import moviesApi from "../../utils/MoviesApi";
@@ -13,12 +13,14 @@ import ProtectedRoute from "../ProtectedRoute";
 import * as auth from "../../utils/auth.js";
 
 function App() {
+  const history = useHistory();
+
   const [loggedIn, setLoggedIn] = useState(false);
   const [isCloseShortsFilms, setIsCloseShortsFilms] = useState(false);
   const [userData, setUserData] = useState({
-    name: "",
     email: "",
     password: "",
+    name: "",
   });
 
   function handleEditShortsFilms() {
@@ -42,15 +44,70 @@ function App() {
       });
   }, []);
 
-  const handleRegister = ({ name, email, password }) => {
+  useEffect(() => {
+    if (loggedIn === true) {
+      history.push("/movies");
+    }
+  }, [loggedIn]);
+
+  useEffect(() => {
+    tokenCheck();
+  }, []);
+
+  const tokenCheck = () => {
+    // если у пользователя есть токен в localStorage,
+    // эта функция проверит валидность токена
+    const token = localStorage.getItem("token");
+    if (token) {
+      // проверим токен
+      auth
+        .getContent(token)
+        .then((data) => {
+          if (data) {
+            // здесь можем получить данные пользователя!
+            const userData = {
+              email: data.email,
+              //          password: data.data._id,
+            };
+            localStorage.setItem("token", token);
+            setUserData(userData);
+            setLoggedIn(true);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
+  const handleLogin = ({ email, password }) => {
     auth
-      .register({ name, email, password })
+      .authorize({
+        email,
+        password,
+      })
+      .then((data) => {
+        if (data) {
+          localStorage.setItem("token", data.token);
+          setLoggedIn(true);
+        }
+        const userData = {
+          email,
+        };
+        setUserData(userData);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const handleRegister = ({ email, password, name }) => {
+    auth
+      .register({ email, password, name })
       .then((data) => {
         if (data) {
           setUserData({
-            name,
             email,
             password,
+            name,
           });
         }
       })
@@ -94,7 +151,11 @@ function App() {
         </Route>
 
         <Route path="/signin">
-          <Login />
+          <Login
+            onLogin={handleLogin}
+            tokenCheck={tokenCheck}
+            loggedIn={loggedIn}
+          />
         </Route>
         <Route path="/signup">
           <Register onRegister={handleRegister} />

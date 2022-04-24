@@ -8,10 +8,10 @@ function SearchForm() {
     handleSubmit,
     reset
   } = useForm({
-    mode: 'onBlur'
+    mode: "onBlur"
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     alert(JSON.stringify(data));
     reset();
   };
@@ -26,11 +26,15 @@ function SearchForm() {
             required: "Нужно ввести ключевое слово",
             minLength: {
               value: 2,
-              message: "Минимум 2 символа",
-            },
+              message: "Минимум 2 символа"
+            }
           })} // возможно нужно будет переделать на RUname
         />
-        <button type="submit" className="search-form__button" disabled={!isValid}>
+        <button
+          type="submit"
+          className="search-form__button"
+          disabled={!isValid}
+        >
           Найти
         </button>
       </form>

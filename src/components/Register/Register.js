@@ -21,8 +21,8 @@ function Register({ onRegister }) {
     e.preventDefault();
     //  if (data.password) {
     //если что сотри это условие!!!!!!
-    const { name, email, password } = data;
-    onRegister({ name, email, password });
+    const { email, password, name } = data;
+    onRegister({ email, password, name });
   };
 
   return (

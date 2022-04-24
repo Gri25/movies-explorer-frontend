@@ -6,19 +6,16 @@ import Preloader from "./Preloader/Preloader";
 import SearchForm from "./SearchForm/SearchForm";
 
 function Movies(props) {
-
   return (
     <>
-      <Header/>
+      <Header />
       <SearchForm />
       <FilterCheckbox
         isOpen={props.isOpen}
         onEditFilms={props.onEditFilms}
         onClose={props.onClose}
       />
-      <MoviesCardList
-        cards={props.cards}
-      />
+      <MoviesCardList cards={props.cards} />
       <Preloader />
       <Footer />
     </>

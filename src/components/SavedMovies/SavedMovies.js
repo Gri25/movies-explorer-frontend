@@ -5,18 +5,17 @@ import SearchForm from "../Movies/SearchForm/SearchForm";
 import SavedMoviesCardList from "./SavedMoviesCardList/SavedMoviesCardList";
 
 function SavedMovies(props) {
-
   return (
     <>
-    <Header/>
-    <SearchForm/>
-    <FilterCheckbox
-      isOpen={props.isOpen}
-      onEditFilms={props.onEditFilms}
-      onClose={props.onClose}
-    />
-    <SavedMoviesCardList/>
-    <Footer/>
+      <Header />
+      <SearchForm />
+      <FilterCheckbox
+        isOpen={props.isOpen}
+        onEditFilms={props.onEditFilms}
+        onClose={props.onClose}
+      />
+      <SavedMoviesCardList />
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.movie.diplom.nomoredomains.work";
+export const BASE_URL = "http://api.movie.diplom.nomoredomains.work";
 
 const checkResponse = (response) => {
   return response.ok
@@ -6,14 +6,14 @@ const checkResponse = (response) => {
     : Promise.reject(`Ошибка: ${response.statusText}`);
 };
 
-export const register = ({ name, email, password }) => {
+export const register = ({ email, password, name }) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify({ email, password, name }),
   }).then(checkResponse);
 };
 
