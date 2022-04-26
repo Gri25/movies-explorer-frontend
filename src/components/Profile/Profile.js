@@ -1,26 +1,26 @@
 import React from "react";
 import Header from "../Header/Header";
 
-function Profile() {
+function Profile(props) {
   return (
     <>
     <Header/>
     <section className="profile">
-      <h2 className="profile__text">Привет, Виталий!</h2>
+      <h2 className="profile__text">Привет, {props.userData.name}!</h2>
       <div className="profile__input-section">
         <p className="profile__input-text">Имя</p>
-        <input className="profile__input-info" value="Виталий"/>
+        <input className="profile__input-info" value={props.userData.name}/>
       </div>
       <div className="profile__input-section">
-        <p className="profile__input-text">E-mail</p>
-        <input className="profile__input-info" value="pochta@yandex.ru"/>
+        <p className="profile__input-text">Почта</p>
+        <input className="profile__input-info" value={props.userData.email}/>
       </div>
-      <a href="WWW" className="profile__button-edit" target="blank">
+      <button className="profile__button-edit" target="blank">
         Редактировать
-      </a>
-      <a href="WWW" className="profile__button-exit" target="blank">
+      </button>
+      <button onClick={props.onLogout} className="profile__button-exit" target="blank">
         Выйти из аккаунта
-      </a>
+      </button>
     </section>
     </>
   );

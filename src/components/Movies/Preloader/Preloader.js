@@ -1,9 +1,9 @@
 import React from "react";
 
-function Preloader() {
+function Preloader(props) {
   return (
     <section className="preloader">
-      <button className="preloader__button">Ещё</button>
+      <button type="button" className="preloader__button">Ещё</button>
     </section>
   );
 }

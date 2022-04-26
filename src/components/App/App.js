@@ -37,16 +37,35 @@ function App() {
       .getCardMovies()
       .then((data) => {
         setCards(data);
-        console.log(data);
+        data.splice(12, 88);
+        if (document.App.clientWidth > 768) {
+          data.splice(5, 95);
+        }
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
 
+  const addMovies = (cards) => {
+
+    cards.splice(15, 85);
+
+  }
+
+  /*
+  useEffect(() => {
+    const handleScreenWidth = () => {
+      ...
+    };
+    window.addEventListener("resize", handleScreenWidth);
+    return () => window.removeEventListener("resize", handleScreenWidth);
+  }, [ ]);
+*/
   useEffect(() => {
     if (loggedIn === true) {
       history.push("/movies");
+      console.log(userData);
     }
   }, [loggedIn]);
 
@@ -67,6 +86,7 @@ function App() {
             // здесь можем получить данные пользователя!
             const userData = {
               email: data.email,
+              name: data.name,
               //          password: data.data._id,
             };
             localStorage.setItem("token", token);
@@ -80,21 +100,25 @@ function App() {
     }
   };
 
-  const handleLogin = ({ email, password }) => {
+  const handleLogin = ({ email, password, name }) => {
     auth
       .authorize({
         email,
         password,
+        name,
       })
       .then((data) => {
         if (data) {
           localStorage.setItem("token", data.token);
           setLoggedIn(true);
+          history.push("/movies");
         }
         const userData = {
           email,
+          name,
         };
         setUserData(userData);
+        console.log(userData);
       })
       .catch((error) => console.error(error));
   };
@@ -109,12 +133,34 @@ function App() {
             password,
             name,
           });
+          history.push("/signin");
         }
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setUserData({
+      email: "",
+      password: "",
+      name: "",
+    });
+    setLoggedIn(false);
+    history.push("/main");
+  };
+
+  const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+
+  function openBurgerMenu() {
+    setIsBurgerMenuOpen(true);
+  }
+
+  function closeBurgerMenu() {
+    setIsBurgerMenuOpen(false);
+  }
 
   return (
     <>
@@ -128,6 +174,7 @@ function App() {
           onEditFilms={handleEditShortsFilms}
           onClose={closeShortsFilms}
           cards={cards}
+          addMovies={addMovies}
         >
           {" "}
         </ProtectedRoute>
@@ -142,7 +189,13 @@ function App() {
         >
           {" "}
         </ProtectedRoute>
-        <ProtectedRoute path="/profile" loggedIn={loggedIn} component={Profile}>
+        <ProtectedRoute
+          path="/profile"
+          loggedIn={loggedIn}
+          component={Profile}
+          onLogout={handleLogout}
+          userData={userData}
+        >
           {" "}
         </ProtectedRoute>
 
@@ -164,7 +217,13 @@ function App() {
           <PageNotFound />
         </Route>
         <Route path="/burger">
-          <BurgerMenu />
+          <BurgerMenu
+            isOpen={isBurgerMenuOpen}
+            onClose={closeBurgerMenu}
+            onLogout={handleLogout}
+            userData={userData}
+            loggedIn={loggedIn}
+          />
         </Route>
         <Route exact path="/">
           {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/main" />}
@@ -177,6 +236,8 @@ function App() {
 export default App;
 
 /*
+
+
         <Route path="/movies">
           <Movies
             isOpen={isCloseShortsFilms}

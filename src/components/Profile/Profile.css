@@ -70,6 +70,8 @@
   text-decoration: none;
   transition: opacity .2s linear;
   margin: 220px 0 0;
+  border: none;
+  background-color: #202020;
 }
 
 .profile__button-edit:hover {
@@ -92,6 +94,8 @@
   text-decoration: none;
   transition: opacity .2s linear;
   margin: 16px 0 0;
+  background-color: #202020;
+  border: none;
 }
 
 .profile__button-exit:hover {

@@ -14,6 +14,7 @@ function Movies(props) {
         isOpen={props.isOpen}
         onEditFilms={props.onEditFilms}
         onClose={props.onClose}
+        addMovies={props.addMovies}
       />
       <MoviesCardList cards={props.cards} />
       <Preloader />
