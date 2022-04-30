@@ -11,13 +11,10 @@ function Movies(props) {
       <Header />
       <SearchForm />
       <FilterCheckbox
-        isOpen={props.isOpen}
-        onEditFilms={props.onEditFilms}
-        onClose={props.onClose}
-        addMovies={props.addMovies}
+
       />
-      <MoviesCardList cards={props.cards} />
-      <Preloader />
+      <MoviesCardList cards={props.cards} downloadCards={props.downloadCards} />
+      <Preloader addMovies={props.addMovies} />
       <Footer />
     </>
   );

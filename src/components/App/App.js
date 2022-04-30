@@ -9,63 +9,89 @@ import { Route, Switch, Redirect, useHistory } from "react-router-dom";
 import Movies from "../Movies/Movies";
 import Main from "../Main/Main";
 import moviesApi from "../../utils/MoviesApi";
+import mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute";
 import * as auth from "../../utils/auth.js";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
+import { getToken } from "../../utils/utils";
 
 function App() {
   const history = useHistory();
-
+  const [currentUser, setcurrentUser] = useState({});
+  const [cards, setCards] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [isCloseShortsFilms, setIsCloseShortsFilms] = useState(false);
   const [userData, setUserData] = useState({
     email: "",
     password: "",
     name: "",
   });
 
-  function handleEditShortsFilms() {
-    setIsCloseShortsFilms(true);
-  }
-  function closeShortsFilms() {
-    setIsCloseShortsFilms(false);
-  }
+  const downloadUserData = () => {
+    mainApi
+      .getPersonalInfo(getToken("token"))
+      .then((data) => {
+        setcurrentUser(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
+  const handleScreenWidth = () => {
     moviesApi
       .getCardMovies()
       .then((data) => {
         setCards(data);
-        data.splice(12, 88);
-        if (document.App.clientWidth > 768) {
-          data.splice(5, 95);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+/*
+  const handleCutLongFilm = () => {
+    moviesApi
+      .getCardMovies()
+      .then((duration) => {
+        if (duration) {
+          console.log(duration)
         }
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  };
+*/
+  const [downloadCards, setDownloadCards] = useState(12);
+  const [plusCount, setPlusCount] = useState(3);
 
-  const addMovies = (cards) => {
-
-    cards.splice(15, 85);
-
+  function clientWidthMovies() {
+    if (document.documentElement.clientWidth < 800) {
+      setDownloadCards(8);
+      setPlusCount(2);
+    }
+    if (document.documentElement.clientWidth < 400) {
+      setDownloadCards(5);
+      setPlusCount(1);
+    }
   }
 
-  /*
   useEffect(() => {
-    const handleScreenWidth = () => {
-      ...
+    downloadUserData();
+    clientWidthMovies();
+    handleScreenWidth();
+    const handleResizeWindow = () => {
+      setTimeout(handleScreenWidth, 3000);
     };
-    window.addEventListener("resize", handleScreenWidth);
-    return () => window.removeEventListener("resize", handleScreenWidth);
-  }, [ ]);
-*/
+    window.addEventListener("resize", handleResizeWindow);
+    return () => window.removeEventListener("resize", handleResizeWindow);
+  }, []);
+  const addMovies = () => {
+    setDownloadCards(downloadCards + plusCount);
+  };
+
   useEffect(() => {
     if (loggedIn === true) {
       history.push("/movies");
-      console.log(userData);
     }
   }, [loggedIn]);
 
@@ -83,14 +109,8 @@ function App() {
         .getContent(token)
         .then((data) => {
           if (data) {
-            // здесь можем получить данные пользователя!
-            const userData = {
-              email: data.email,
-              name: data.name,
-              //          password: data.data._id,
-            };
+            setcurrentUser(data);
             localStorage.setItem("token", token);
-            setUserData(userData);
             setLoggedIn(true);
           }
         })
@@ -105,7 +125,6 @@ function App() {
       .authorize({
         email,
         password,
-        name,
       })
       .then((data) => {
         if (data) {
@@ -113,12 +132,6 @@ function App() {
           setLoggedIn(true);
           history.push("/movies");
         }
-        const userData = {
-          email,
-          name,
-        };
-        setUserData(userData);
-        console.log(userData);
       })
       .catch((error) => console.error(error));
   };
@@ -133,6 +146,7 @@ function App() {
             password,
             name,
           });
+          console.log(data);
           history.push("/signin");
         }
       })
@@ -163,29 +177,22 @@ function App() {
   }
 
   return (
-    <>
+    <CurrentUserContext.Provider value={currentUser}>
       <Switch>
         <ProtectedRoute
-          userData={userData}
           path="/movies"
           loggedIn={loggedIn}
           component={Movies}
-          isOpen={isCloseShortsFilms}
-          onEditFilms={handleEditShortsFilms}
-          onClose={closeShortsFilms}
           cards={cards}
           addMovies={addMovies}
+          downloadCards={downloadCards}
         >
           {" "}
         </ProtectedRoute>
         <ProtectedRoute
-          userData={userData}
           path="/saved-movies"
           loggedIn={loggedIn}
           component={SavedMovies}
-          isOpen={isCloseShortsFilms}
-          onEditFilms={handleEditShortsFilms}
-          onClose={closeShortsFilms}
         >
           {" "}
         </ProtectedRoute>
@@ -229,33 +236,36 @@ function App() {
           {loggedIn ? <Redirect to="/movies" /> : <Redirect to="/main" />}
         </Route>
       </Switch>
-    </>
+    </CurrentUserContext.Provider>
   );
 }
 
 export default App;
 
 /*
-
-
-        <Route path="/movies">
-          <Movies
-            isOpen={isCloseShortsFilms}
-            onEditFilms={handleEditShortsFilms}
-            onClose={closeShortsFilms}
-            cards={cards}
-          />
-        </Route>
-
-        <Route path="/saved-movies">
-          <SavedMovies
-            isOpen={isCloseShortsFilms}
-            onEditFilms={handleEditShortsFilms}
-            onClose={closeShortsFilms}
-          </Route>
-          />
-
-                  <Route path="/profile">
-          <Profile />
-        </Route>
-*/
+  const tokenCheck = () => {
+    // если у пользователя есть токен в localStorage,
+    // эта функция проверит валидность токена
+    const token = localStorage.getItem("token");
+    if (token) {
+      // проверим токен
+      auth
+        .getContent(token)
+        .then((data) => {
+          if (data) {
+            // здесь можем получить данные пользователя!
+            const userData = {
+              email: data.email,
+              name: data.name,
+            };
+            setUserData(userData);
+            localStorage.setItem("token", token);
+            setLoggedIn(true);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+  */

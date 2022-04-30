@@ -10,9 +10,6 @@ function SavedMovies(props) {
       <Header />
       <SearchForm />
       <FilterCheckbox
-        isOpen={props.isOpen}
-        onEditFilms={props.onEditFilms}
-        onClose={props.onClose}
       />
       <SavedMoviesCardList />
       <Footer />
