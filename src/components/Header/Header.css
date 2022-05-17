@@ -114,6 +114,15 @@
 
   .header__burger {
     display: block;
+    transition: opacity .3s linear;
+  }
+
+  .header__burger:hover {
+    opacity: .5;
+  }
+
+  .header__burger:active {
+    opacity: .2;
   }
 }
 

@@ -4,7 +4,7 @@ import logoMain from "../../images/icon-main.svg";
 import burger from "../../images/header-burger.svg";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
     <header className="header">
       <div className="header__left-info">
@@ -18,7 +18,7 @@ function Header() {
           Сохранённые фильмы{" "}
         </Link>
       </div>
-      <img src={burger} className="header__burger" alt="Меню" />
+      <img src={burger} className="header__burger" alt="Меню" onClick={props.openBurgerMenu} />
       <Link to="/profile" className="header__right-info">
         <p className="header__account-text">Аккаунт</p>
         <div className="header__window-logo">

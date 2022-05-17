@@ -1,17 +1,14 @@
 import React from "react";
-import film from "../../../images/films/33slova.png";
-import film1 from "../../../images/films/kinoalmonah.png";
-import film2 from "../../../images/films/vpogonezaB.png";
 
+// нужно сделать тернарник, для того что бы если мы не добавляли никаких карт ничего не отрисосывалось бы
 function SavedMoviesCard() {
   return (
-    <>
       <article className="saved-movie">
-        <img src={film} className="saved-movie__image" alt="Фильм" />
+        <img className="saved-movie__image" alt="Фильм" />
         <div className="saved-movie__description">
           <div className="saved-movie__info">
-            <h2 className="saved-movie__text">33 слова о дизайне</h2>
-            <p className="saved-movie__duration">1ч 47м</p>
+            <h2 className="saved-movie__text"></h2>
+            <p className="saved-movie__duration"></p>
           </div>
           <button
             type="button"
@@ -20,35 +17,6 @@ function SavedMoviesCard() {
           ></button>
         </div>
       </article>
-      <article className="saved-movie">
-        <img src={film1} className="saved-movie__image" alt="Фильм" />
-        <div className="saved-movie__description">
-          <div className="saved-movie__info">
-            <h2 className="saved-movie__text">Киноальманах «100 лет дизайна»</h2>
-            <p className="saved-movie__duration">1ч 3м</p>
-          </div>
-          <button
-            type="button"
-            aria-label="Нравится"
-            className="saved-movie__stroke"
-          ></button>
-        </div>
-      </article>
-      <article className="saved-movie">
-        <img src={film2} className="saved-movie__image" alt="Фильм" />
-        <div className="saved-movie__description">
-          <div className="saved-movie__info">
-            <h2 className="saved-movie__text">В погоне за Бенкси</h2>
-            <p className="saved-movie__duration">1ч 42м</p>
-          </div>
-          <button
-            type="button"
-            aria-label="Нравится"
-            className="saved-movie__stroke"
-          ></button>
-        </div>
-      </article>
-    </>
   );
 }
 

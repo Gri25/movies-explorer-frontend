@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+.burger-menu-container-none {
+  display: none;
+}
+
 .burger-menu {
   margin-left: auto;
   margin-right: 0;

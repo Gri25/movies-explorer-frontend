@@ -17,7 +17,7 @@ function Promo() {
           </Link>
           <Link
             to="/signin"
-            className="promo__header-link promo__header-link_type-active"
+            className="promo__header-link"
           >
             Войти{" "}
           </Link>
