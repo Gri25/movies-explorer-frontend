@@ -3,9 +3,11 @@ import logo from "../../images/logo.svg";
 import logoMain from "../../images/icon-main.svg";
 import burger from "../../images/header-burger.svg";
 import { Link } from "react-router-dom";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function Header(props) {
   return (
+    <>
     <header className="header">
       <div className="header__left-info">
         <Link to="/" className="header__logo-container">
@@ -26,6 +28,7 @@ function Header(props) {
         </div>
       </Link>
     </header>
+    </>
   );
 }
 

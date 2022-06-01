@@ -14,9 +14,9 @@ function BurgerMenu(props) {
         }
       >
         <div className="burger-menu">
-          <img src={ExitBurger} className="burger-menu__exit" alt="Выход" />
+          <img src={ExitBurger} className="burger-menu__exit" onClick={props.closeBurgerMenu} alt="Выход" />
           <nav className="burger-menu__links">
-            <Link to="/" className="burger-menu__link">
+            <Link to="/" className="burger-menu__link" onClick={props.onLogout}>
               Главная{" "}
             </Link>
             <Link to="/movies" className="burger-menu__link">

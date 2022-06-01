@@ -2,9 +2,11 @@ import React, { useState } from "react";
 // import { useForm } from "react-hook-form";
 
 function SearchForm(props) {
+  const [value, setValue] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.filteredMovies(props.superCards);
+    props.searchMovies(value);
   };
   return (
     <section className="search-form">
@@ -12,7 +14,9 @@ function SearchForm(props) {
         <input
           placeholder="Фильм"
           className="search-form__input"
-          onChange={props.searchMovies}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
         />
         <button type="submit" className="search-form__button">
           Найти

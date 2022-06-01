@@ -74,6 +74,14 @@
 .movie-card__stroke_active {
   background: url(../../../images/stroke-active.svg);
   opacity: 1;
+  margin: 19px 24px 0 0;
+  padding: 0;
+  width: 14px;
+  height: 12px;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
 }
 
 .movie-card__stroke:hover {
