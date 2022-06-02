@@ -13,6 +13,8 @@ function MoviesCardList(props) {
           card={card}
           saved={props.saveCard.some((savedCard)=> savedCard.movieId === card.id)}
           savedCards={props.savedCards}
+          handleDeleteMovie={props.handleDeleteMovie}
+        //  handleDislikeMovie={props.handleDislikeMovie}
        //   isStrokeAktive={props.isStrokeAktive}
         />
       ))}

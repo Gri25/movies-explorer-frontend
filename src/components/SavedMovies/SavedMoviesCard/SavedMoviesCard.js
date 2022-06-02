@@ -15,7 +15,7 @@ function SavedMoviesCard(props) {
   }
 
   const onDislikeClick = () => {
-    props.handleDeleteMovie(props.card);
+    props.handleDeleteMovie(props.card._id);
   };
 
   return (

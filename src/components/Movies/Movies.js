@@ -60,6 +60,8 @@ function Movies(props) {
         superCards={superCards}
         filteredMovies={filteredMovies(superCards)}
         savedCards={props.savedCards}
+        handleDeleteMovie={props.handleDeleteMovie}
+     //   handleDislikeMovie={props.handleDislikeMovie}
      //   isStrokeAktive={props.isStrokeAktive}
       />
       <Preloader addMovies={props.addMovies} />

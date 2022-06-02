@@ -11,8 +11,6 @@ function SavedMovies(props) {
     props.isChecked ? props.shortsSavedMovies : props.saveCard
   ).concat([]);
 
-
-
   const [value, setValue] = useState("");
 
   const searchMovies = (value) => {
