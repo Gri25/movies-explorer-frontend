@@ -199,19 +199,20 @@ function App() {
       силы уже на исходе, может если вы взляните то вам будет понятно как это исправить
       . Я знаю что можно изначально добавить поле для того что бы не писать отдельной функции
       для удаления сохранённых карт через дизлайк но и это у меня не получается.
-      */
+
       mainApi
         .deleteMovie(id, getToken("token"))
         .then(
           setSaveCard(
             setSaveCard((savedCard) =>
-              savedCard.filter((savesCard) => savesCard.id !== card.id)
+              savedCard.filter(() => savesCard.movieId !== card.id)
             )
           )
         )
         .catch((error) => {
           console.error(error);
         });
+        */
     } else {
       console.log(card);
       mainApi
@@ -248,7 +249,16 @@ function App() {
         console.error(error);
       });
   }
-
+  /*
+  .deleteMovie(saveMovie._id || saveMovie.id)
+  .then(() => {
+    const newCardsArr = saveMovies.filter((c) => c._id !== saveMovie._id);
+    const newSavedCardsArr = saveMovies.filter(
+      (c) => c._id !== saveMovie._id
+    );
+    setSaveMovies(newCardsArr);
+    setFilterSaveMovies(newSavedCardsArr);
+    */
   return (
     <CurrentUserContext.Provider value={userData}>
       <Switch>
