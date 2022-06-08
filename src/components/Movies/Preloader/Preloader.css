@@ -7,6 +7,10 @@
   background-color: #202020;
 }
 
+.preloader__none {
+  display: none;
+}
+
 .preloader__button {
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
@@ -28,7 +32,7 @@
   cursor: pointer;
 }
 
-.preloader__button:focus {
+.preloader__button:active {
   opacity: 0.2;
 }
 

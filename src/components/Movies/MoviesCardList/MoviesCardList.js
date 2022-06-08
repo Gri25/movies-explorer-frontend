@@ -2,8 +2,15 @@ import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 
 function MoviesCardList(props) {
+  React.useEffect(() => {
+    props.handleSaveCards(props.savedCard);
+  }, []);
 
+  const [buttonYetDisable, setButtonYetDisable] = React.useState(true);
 
+  if (props.filteredMovies === 100) {
+    setButtonYetDisable(true);
+  }
 
   return (
     <section className="movie-cards">
@@ -11,11 +18,11 @@ function MoviesCardList(props) {
         <MoviesCard
           key={i}
           card={card}
-          saved={props.saveCard.some((savedCard)=> savedCard.movieId === card.id)}
+          saved={props.saveCard.some(
+            (savedCard) => savedCard.movieId === card.id
+          )}
           savedCards={props.savedCards}
           handleDeleteMovie={props.handleDeleteMovie}
-        //  handleDislikeMovie={props.handleDislikeMovie}
-       //   isStrokeAktive={props.isStrokeAktive}
         />
       ))}
     </section>
@@ -23,13 +30,3 @@ function MoviesCardList(props) {
 }
 
 export default MoviesCardList;
-
-//  const superCards = props.cards.concat([]);
-/*
-  const superCards = (
-    props.isChecked ? props.shortsMovies : props.cards
-  ).concat([]);
-  */
-// console.log(props.su)
-// const superPuperCards = props.superCards.concat([]);
-// console.log(superPuperCards);

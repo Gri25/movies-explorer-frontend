@@ -41,7 +41,7 @@ function Profile(props) {
 
   return (
     <CurrentUserContext.Provider value={userData}>
-      <Header openBurgerMenu={props.openBurgerMenu} />
+      <Header openBurgerMenu={props.openBurgerMenu} loggedIn={props.loggedIn} />
       <BurgerMenu
         closeBurgerMenu={props.closeBurgerMenu}
         onLogout={props.onLogout}
@@ -60,8 +60,6 @@ function Profile(props) {
               required
               minLength={2}
               maxLength={40}
-              //value={userData.name}
-              //value={values.name || ""}
               value={name}
               onChange={handleChangeName}
             />
@@ -77,7 +75,6 @@ function Profile(props) {
               required
               minLength={5}
               maxLength={40}
-              //value={userData.email}
               value={email}
               onChange={handleChangeEmail}
             />

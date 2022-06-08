@@ -6,7 +6,6 @@ import FilterCheckbox from "./FilterCheckbox/FilterCheckbox";
 import MoviesCardList from "./MoviesCardList/MoviesCardList";
 import Preloader from "./Preloader/Preloader";
 import SearchForm from "./SearchForm/SearchForm";
-import mainApi from "../../utils/MainApi";
 
 function Movies(props) {
   const superCards = (
@@ -35,7 +34,7 @@ function Movies(props) {
 
   return (
     <>
-      <Header openBurgerMenu={props.openBurgerMenu} />
+      <Header openBurgerMenu={props.openBurgerMenu} loggedIn={props.loggedIn} />
       <BurgerMenu
         isBurgerMenuOpen={props.isBurgerMenuOpen}
         closeBurgerMenu={props.closeBurgerMenu}
@@ -61,10 +60,12 @@ function Movies(props) {
         filteredMovies={filteredMovies(superCards)}
         savedCards={props.savedCards}
         handleDeleteMovie={props.handleDeleteMovie}
-     //   handleDislikeMovie={props.handleDislikeMovie}
-     //   isStrokeAktive={props.isStrokeAktive}
+        handleSaveCards={props.handleSaveCards}
       />
-      <Preloader addMovies={props.addMovies} />
+      <Preloader
+        addMovies={props.addMovies}
+        buttonYetDisable={props.buttonYetDisable}
+      />
       <Footer />
     </>
   );

@@ -7,28 +7,31 @@ import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function Header(props) {
   return (
-    <>
-    <header className="header">
-      <div className="header__left-info">
-        <Link to="/" className="header__logo-container">
-          <img src={logo} className="header__logo" alt="Лого" />
-        </Link>
-        <Link to="/movies" className="header__header-link">
-          Фильмы{" "}
-        </Link>
-        <Link to="/saved-movies" className="header__header-link">
-          Сохранённые фильмы{" "}
-        </Link>
-      </div>
-      <img src={burger} className="header__burger" alt="Меню" onClick={props.openBurgerMenu} />
-      <Link to="/profile" className="header__right-info">
-        <p className="header__account-text">Аккаунт</p>
-        <div className="header__window-logo">
-          <img src={logoMain} className="header__account-logo" alt="Лого" />
+      <header className={props.loggedIn ? "header" : "header__none"}>
+        <div className="header__left-info">
+          <Link to="/main" className="header__logo-container">
+            <img src={logo} className="header__logo" alt="Лого" />
+          </Link>
+          <Link to="/movies" className="header__header-link">
+            Фильмы{" "}
+          </Link>
+          <Link to="/saved-movies" className="header__header-link">
+            Сохранённые фильмы{" "}
+          </Link>
         </div>
-      </Link>
-    </header>
-    </>
+        <img
+          src={burger}
+          className="header__burger"
+          alt="Меню"
+          onClick={props.openBurgerMenu}
+        />
+        <Link to="/profile" className="header__right-info">
+          <p className="header__account-text">Аккаунт</p>
+          <div className="header__window-logo">
+            <img src={logoMain} className="header__account-logo" alt="Лого" />
+          </div>
+        </Link>
+      </header>
   );
 }
 

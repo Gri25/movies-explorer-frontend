@@ -14,11 +14,7 @@ function MoviesCard(props) {
   const onLikeClick = () => {
     props.savedCards(props.card);
   };
-/*
-  const onDislikeClick = () => {
-    props.handleDislikeMovie(props.card.id);
-  };
-*/
+
   return (
     <article className="movie-card">
       <img
@@ -34,7 +30,6 @@ function MoviesCard(props) {
         <button
           type="button"
           aria-label="Нравится"
-         // onClick={props.saved ? onDislikeClick : onLikeClick}
           onClick={onLikeClick}
           className={
             props.saved ? "movie-card__stroke_active" : "movie-card__stroke"

@@ -193,51 +193,35 @@ function App() {
       });
   };
 
-  const savedCards = (card, id) => {
+  const savedCards = (card, movieId) => {
     if (saveCard.some((savedCard) => savedCard.movieId === card.id)) {
-      /*не могу реализовать метод удаления через дизлайк
-      силы уже на исходе, может если вы взляните то вам будет понятно как это исправить
-      . Я знаю что можно изначально добавить поле для того что бы не писать отдельной функции
-      для удаления сохранённых карт через дизлайк но и это у меня не получается.
+      let saveMovieId = saveCard.find(
+        (saveCard) => saveCard.movieId === card.id
+      );
+      console.log(saveMovieId.movieId);
 
       mainApi
-        .deleteMovie(id, getToken("token"))
+        .deleteMovie(saveMovieId._id, getToken("token"))
         .then(
-          setSaveCard(
-            setSaveCard((savedCard) =>
-              savedCard.filter(() => savesCard.movieId !== card.id)
-            )
+          handleSaveCards((savedCard) =>
+            savedCard.filter((item) => item.id !== saveMovieId.movieId)
           )
         )
         .catch((error) => {
           console.error(error);
         });
-        */
     } else {
       console.log(card);
       mainApi
         .savedCard(card, getToken("token"))
         .then(({ data }) => {
           handleSaveCards();
-          // setSaveCard([data]);
         })
         .catch((error) => {
           console.error(error);
         });
     }
   };
-  /*
-  function handleDislikeMovie(id) {
-    mainApi
-      .deleteMovie(id, getToken("token"))
-      .then(
-        setSaveCard((savedCard) => savedCard.filter((item) => item.id !== id))
-      )
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-*/
 
   function handleDeleteMovie(_id) {
     mainApi
@@ -249,16 +233,9 @@ function App() {
         console.error(error);
       });
   }
-  /*
-  .deleteMovie(saveMovie._id || saveMovie.id)
-  .then(() => {
-    const newCardsArr = saveMovies.filter((c) => c._id !== saveMovie._id);
-    const newSavedCardsArr = saveMovies.filter(
-      (c) => c._id !== saveMovie._id
-    );
-    setSaveMovies(newCardsArr);
-    setFilterSaveMovies(newSavedCardsArr);
-    */
+
+
+
   return (
     <CurrentUserContext.Provider value={userData}>
       <Switch>
@@ -280,8 +257,7 @@ function App() {
           saveCard={saveCard}
           onLogout={handleLogout}
           handleDeleteMovie={handleDeleteMovie}
-          //          handleDislikeMovie={handleDislikeMovie}
-          // isStrokeAktive={isStrokeAktive}
+          handleSaveCards={handleSaveCards}
         >
           {" "}
         </ProtectedRoute>
@@ -309,7 +285,6 @@ function App() {
           loggedIn={loggedIn}
           component={Profile}
           onLogout={handleLogout}
-          // userData={userData}
           onUpdateUser={handleUpdateUser}
           openBurgerMenu={openBurgerMenu}
           closeBurgerMenu={closeBurgerMenu}
@@ -319,7 +294,7 @@ function App() {
         </ProtectedRoute>
 
         <Route path="/main">
-          <Main />
+          <Main openBurgerMenu={openBurgerMenu} loggedIn={loggedIn} />
         </Route>
 
         <Route path="/signin">

@@ -4,10 +4,10 @@ import AboutProject from "./AboutProject/AboutProject";
 import Promo from "./Promo/Promo";
 import Techs from "./Techs/Techs";
 
-function Main() {
+function Main(props) {
   return (
     <>
-      <Promo />
+      <Promo loggedIn={props.loggedIn} openBurgerMenu={props.openBurgerMenu} />
       <AboutProject />
       <Techs />
       <AboutMe />

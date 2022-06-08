@@ -33,7 +33,7 @@ function SavedMovies(props) {
 
   return (
     <>
-      <Header openBurgerMenu={props.openBurgerMenu} />
+      <Header openBurgerMenu={props.openBurgerMenu} loggedIn={props.loggedIn} />
       <BurgerMenu
         isBurgerMenuOpen={props.isBurgerMenuOpen}
         closeBurgerMenu={props.closeBurgerMenu}
