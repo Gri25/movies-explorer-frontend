@@ -5,9 +5,14 @@
 }
 
 .filter-checkbox__info {
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.filter-checkbox__case {
   border-bottom: 1px solid #424242;
   padding-bottom: 69px;
 }
@@ -16,45 +21,49 @@
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  text-align: center;
   font-size: 14px;
   line-height: 18px;
   color: #FFFFFF;
 }
 
-.filter-checkbox__button {
-  margin: 0 12px 0 0;
+.filter-checkbox__checkbox {
+  display: none;
+}
+
+.filter-checkbox__fake {
   display: inline-block;
+  margin: 0 12px 0 0;
   cursor: pointer;
   width: 36px;
   height: 20px;
   border-radius: 20px;
   border: none;
   background-color: #EBEBEB;
-  z-index: 0;
   position: relative;
   transition-duration: 300ms;
 }
 
-.filter-checkbox__button::after {
+.filter-checkbox__fake::before {
   content: "";
-  height: 16px; /* высота кнопки */
-  width: 16px; /* ширина кнопки */
-  border-radius: 18px; /* радиус кнопки */
-  background: #fff; /* цвет кнопки */
-  top: 2px; /* положение кнопки по вертикали относительно основы */
-  left: 2px; /* положение кнопки по горизонтали относительно основы */
-  transition-duration: 300ms; /* анимация */
   position: absolute;
-  z-index: 1;
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 18px;
+  background: #fff;
+  top: 2px;
+  left: 2px;
+  transition-duration: 300ms;
 }
 
-.filter-checkbox__button-on {
-  background: #3DDC84;
-}
-.filter-checkbox__button-on::after { /* кругляшок */
+.filter-checkbox__checkbox:checked+.filter-checkbox__fake::before {
   left: 18px;
-  background: #FFFFFF;;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);  /* тень */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.filter-checkbox__checkbox:checked+.filter-checkbox__fake {
+  background: #3DDC84;
 }
 
 @media screen and (max-width: 768px) {
@@ -64,7 +73,7 @@
     padding-right: 30px;
   }
 
-  .filter-checkbox__info {
+  .filter-checkbox__case {
     padding-bottom: 50px;
   }
 }
@@ -76,7 +85,7 @@
     padding-right: 14px;
   }
 
-  .filter-checkbox__info {
+  .filter-checkbox__case {
     padding-bottom: 49px;
   }
 

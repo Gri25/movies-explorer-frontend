@@ -1,54 +1,43 @@
 import React from "react";
-import film from "../../../images/films/33slova.png";
-import film1 from "../../../images/films/kinoalmonah.png";
-import film2 from "../../../images/films/vpogonezaB.png";
 
-function SavedMoviesCard() {
+// нужно сделать тернарник, для того что бы если мы не добавляли никаких карт ничего не отрисосывалось бы
+function SavedMoviesCard(props) {
+
+  const [isSaveMovie, setIsSaveMovie] = React.useState(false);
+  let text = props.card.duration + " мин";
+
+  if (props.card.duration >= 60) {
+    text =
+      ((props.card.duration / 60) | 0) +
+      " ч " +
+      (props.card.duration % 60) +
+      " мин";
+  }
+
+  const onDislikeClick = () => {
+    props.handleDeleteMovie(props.card._id);
+  };
+
   return (
-    <>
-      <article className="saved-movie">
-        <img src={film} className="saved-movie__image" alt="Фильм" />
-        <div className="saved-movie__description">
-          <div className="saved-movie__info">
-            <h2 className="saved-movie__text">33 слова о дизайне</h2>
-            <p className="saved-movie__duration">1ч 47м</p>
-          </div>
-          <button
-            type="button"
-            aria-label="Нравится"
-            className="saved-movie__stroke"
-          ></button>
+    <article className={isSaveMovie ? "saved-movie" : "saved-movie"}>
+      <img
+        className="saved-movie__image"
+        src={props.card.image}
+        alt="Фильм"
+      />
+      <div className="saved-movie__description">
+        <div className="saved-movie__info">
+          <h2 className="saved-movie__text">{props.card.nameRU}</h2>
+          <p className="saved-movie__duration">{text}</p>
         </div>
-      </article>
-      <article className="saved-movie">
-        <img src={film1} className="saved-movie__image" alt="Фильм" />
-        <div className="saved-movie__description">
-          <div className="saved-movie__info">
-            <h2 className="saved-movie__text">Киноальманах «100 лет дизайна»</h2>
-            <p className="saved-movie__duration">1ч 3м</p>
-          </div>
-          <button
-            type="button"
-            aria-label="Нравится"
-            className="saved-movie__stroke"
-          ></button>
-        </div>
-      </article>
-      <article className="saved-movie">
-        <img src={film2} className="saved-movie__image" alt="Фильм" />
-        <div className="saved-movie__description">
-          <div className="saved-movie__info">
-            <h2 className="saved-movie__text">В погоне за Бенкси</h2>
-            <p className="saved-movie__duration">1ч 42м</p>
-          </div>
-          <button
-            type="button"
-            aria-label="Нравится"
-            className="saved-movie__stroke"
-          ></button>
-        </div>
-      </article>
-    </>
+        <button
+          type="button"
+          aria-label="Нравится"
+          className="saved-movie__stroke"
+          onClick={onDislikeClick}
+        ></button>
+      </div>
+    </article>
   );
 }
 

@@ -1,23 +1,24 @@
 import React from "react";
 
 function FilterCheckbox(props) {
+  //const onHeaderPopup = () => {
+  // props.onHeaderPopup();
+  // };
   return (
     <section className="filter-checkbox">
-      <div className="filter-checkbox__info">
-        <button
-          type="button"
-          onClick={props.onEditFilms}
-          onClose={props.onClose}
-          className={`filter-checkbox__button ${
-            props.isOpen ? "filter-checkbox__button-on" : ""
-          }`} // не могу понять как правильно сделать выключение
-        />
-        <span className="filter-checkbox__text">Короткометражки</span>
+      <div className="filter-checkbox__case">
+        <label className="filter-checkbox__info">
+          <input
+            onClick={props.isChecked ? props.onCloseShortsFilm : props.onVisibleShortsFilm}
+            type="checkbox"
+            className="filter-checkbox__checkbox"
+          />
+          <span className="filter-checkbox__fake"></span>
+          <span className="filter-checkbox__text">Короткометражки</span>
+        </label>
       </div>
     </section>
   );
 }
 
 export default FilterCheckbox;
-
-// <span className="popup__input-error"></span>
